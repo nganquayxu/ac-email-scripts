@@ -24,6 +24,6 @@ python3 send_test.py --campaign-id 12 --message-id 34 --subject "Test" --to me@e
 
 ## Notes
 
-- Draft creation uses the v1 API (`message_add`, `campaign_create` with `status=0`). Test send uses v3 `POST /api/3/campaigns/test-send`.
+- Everything uses API v3: `POST /campaign`, `POST /messages`, `POST /campaignMessages`, `PUT /campaigns/{id}/edit`, `POST /campaigns/test-send`. Campaigns are never scheduled, so they stay drafts.
 - Test sends need a verified sending domain and are rate limited; trial accounts can only send tests to the account owner's address.
 - Prefix `--to` with `+` to send through the regular mail server instead of the test server.
